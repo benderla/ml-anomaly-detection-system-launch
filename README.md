@@ -10,6 +10,12 @@ The system identifies abnormal network activity using an Isolation Forest model 
 • Integrate ML predictions with security monitoring tools  
 • Establish program governance, risks, and launch metrics  
 
+## Why This Project
+
+Machine learning systems require cross-team coordination between data engineering, ML engineering, and platform teams.
+
+This repository demonstrates how a Technical Program Manager can structure the delivery of an ML anomaly detection system from architecture design through production launch.
+
 ## System Overview
 
 This project demonstrates how a Technical Program Manager could lead the deployment of a machine learning anomaly detection system into production.
@@ -18,12 +24,48 @@ The system processes network log data, extracts behavioral features, and applies
 
 Predictions are served through an API and integrated into a security monitoring dashboard for investigation by analysts.
 
+## ML System Lifecycle
+
+1. Data ingestion from network log sources
+2. Feature engineering pipeline
+3. Model training using anomaly detection
+4. Model inference through API
+5. Integration with monitoring dashboards
+6. Continuous monitoring and model retraining
+
+## ML Pipeline Components
+
+Data Ingestion
+Network log streams collected from security infrastructure.
+
+Feature Engineering
+Transform raw log data into behavioral features.
+
+Model Training
+Isolation Forest anomaly detection model.
+
+Inference
+Prediction API serves anomaly scores.
+
+Monitoring
+Model drift detection and alert tuning.
+
 ## System Architecture
 See: architecture/system_architecture.md
 
 ## Architecture
 
 ![System Architecture](diagrams/ml-system-architecture.png)
+
+## Deployment Architecture
+
+Model training environment
+    ↓
+Model registry
+    ↓
+Inference service (FastAPI)
+    ↓
+Security monitoring dashboard
 
 ## Program Milestones
 
