@@ -120,3 +120,33 @@ This repository includes TPM delivery artifacts:
 • Cross-team coordination  
 • System architecture planning  
 • Risk management
+
+## Example ML Workflow
+
+A simple anomaly detection example is provided in:
+
+notebooks/anomaly_detection_demo.ipynb
+
+The notebook demonstrates:
+
+• loading sample network logs  
+• feature engineering  
+• training an Isolation Forest model  
+• detecting anomalous network activity
+
+## Repository Structure
+
+architecture/  
+System design documentation.
+
+program-management/  
+Roadmap, risks, stakeholder mapping, execution plan.
+
+data/  
+Sample network log dataset.
+
+notebooks/  
+Example anomaly detection notebook.
+
+src/  
+Feature engineering and model training code.
