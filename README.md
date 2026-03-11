@@ -5,6 +5,31 @@ This project demonstrates how a Technical Program Manager can lead the deploymen
 
 The system identifies abnormal network activity using an Isolation Forest model and integrates with a security monitoring platform.
 
+## Technology Stack
+
+Python  
+scikit-learn  
+Jupyter  
+FastAPI (inference concept)  
+Kafka (streaming concept)
+
+## Quick Start
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Run the anomaly detection demo notebook:
+
+jupyter notebook notebooks/anomaly_detection_demo.ipynb
+
+The notebook demonstrates:
+
+• loading sample network logs  
+• feature engineering  
+• training an Isolation Forest model  
+• detecting anomalous network activity
+
 ## Objectives
 • Deploy a real-time anomaly detection pipeline  
 • Integrate ML predictions with security monitoring tools  
@@ -16,13 +41,16 @@ Machine learning systems require cross-team coordination between data engineerin
 
 This repository demonstrates how a Technical Program Manager can structure the delivery of an ML anomaly detection system from architecture design through production launch.
 
-## System Overview
+## System Architecture
+See: architecture/system_architecture.md
 
-This project demonstrates how a Technical Program Manager could lead the deployment of a machine learning anomaly detection system into production.
+The system ingests network logs, transforms them into behavioral features, 
+applies an Isolation Forest anomaly detection model, and surfaces alerts 
+through a monitoring dashboard.
 
-The system processes network log data, extracts behavioral features, and applies an Isolation Forest model to detect anomalous activity.
+## Architecture
 
-Predictions are served through an API and integrated into a security monitoring dashboard for investigation by analysts.
+![System Architecture](diagrams/ml-system-architecture.png)
 
 ## ML System Lifecycle
 
@@ -33,7 +61,17 @@ Predictions are served through an API and integrated into a security monitoring 
 5. Integration with monitoring dashboards
 6. Continuous monitoring and model retraining
 
-## ML Pipeline Components
+## Deployment Architecture
+
+Model training environment
+    ↓
+Model registry
+    ↓
+Inference service (FastAPI)
+    ↓
+Security monitoring dashboard
+
+## ML Pipeline Stages
 
 Data Ingestion
 Network log streams collected from security infrastructure.
@@ -50,26 +88,18 @@ Prediction API serves anomaly scores.
 Monitoring
 Model drift detection and alert tuning.
 
-## ML Pipeline
+## Example ML Workflow
 
-![ML Pipeline](diagrams/ml_pipeline.png)
+A simple anomaly detection example is provided in:
 
-## System Architecture
-See: architecture/system_architecture.md
+notebooks/anomaly_detection_demo.ipynb
 
-## Architecture
+The notebook demonstrates:
 
-![System Architecture](diagrams/ml-system-architecture.png)
-
-## Deployment Architecture
-
-Model training environment
-    ↓
-Model registry
-    ↓
-Inference service (FastAPI)
-    ↓
-Security monitoring dashboard
+• loading sample network logs  
+• feature engineering  
+• training an Isolation Forest model  
+• detecting anomalous network activity
 
 ## Program Milestones
 
@@ -99,15 +129,6 @@ This repository includes TPM delivery artifacts:
 • Risk register  
 • Launch success metrics  
 
-## Key Program Risks
-
-| Risk | Impact | Mitigation |
-|-----|-----|-----|
-| Poor data quality | Reduced model accuracy | Data validation pipeline |
-| Model drift | Degrading predictions | Scheduled retraining |
-| Alert fatigue | Analysts ignore alerts | Threshold tuning |
-| System latency | Slow detection | Scalable infrastructure |
-
 ## Program Timeline
 
 | Phase | Duration | Outcome |
@@ -117,26 +138,23 @@ This repository includes TPM delivery artifacts:
 | Integration | 2 weeks | Connect monitoring systems |
 | Launch | 1 week | Production deployment |
 
-## Skills Demonstrated
+## Key Program Risks
 
-• Technical Program Management  
-• Machine Learning System Lifecycle  
-• Cross-team coordination  
-• System architecture planning  
-• Risk management
+| Risk | Impact | Mitigation |
+|-----|-----|-----|
+| Poor data quality | Reduced model accuracy | Data validation pipeline |
+| Model drift | Degrading predictions | Scheduled retraining |
+| Alert fatigue | Analysts ignore alerts | Threshold tuning |
+| System latency | Slow detection | Scalable infrastructure |
 
-## Example ML Workflow
+## Production Readiness
 
-A simple anomaly detection example is provided in:
+The repository includes operational artifacts typically required for launching ML systems:
 
-notebooks/anomaly_detection_demo.ipynb
-
-The notebook demonstrates:
-
-• loading sample network logs  
-• feature engineering  
-• training an Isolation Forest model  
-• detecting anomalous network activity
+• Service level objectives (SLOs)  
+• Model monitoring plan  
+• Incident response playbook  
+• Release rollout strategy
 
 ## Repository Structure
 
@@ -154,3 +172,18 @@ Example anomaly detection notebook.
 
 src/  
 Feature engineering and model training code.
+
+## Skills Demonstrated
+
+• Technical Program Management  
+• Machine Learning System Lifecycle  
+• Cross-team coordination  
+• System architecture planning  
+• Risk management
+
+## Future Improvements
+
+• Deploy model inference service using FastAPI  
+• Add automated model retraining pipeline  
+• Integrate Prometheus monitoring for model performance  
+• Implement real-time streaming pipeline
