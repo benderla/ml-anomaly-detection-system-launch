@@ -88,6 +88,28 @@ Prediction API serves anomaly scores.
 Monitoring
 Model drift detection and alert tuning.
 
+## Launch Plan
+
+Phase 1 — Prototype
+• validate anomaly detection model  
+• evaluate detection accuracy  
+
+Phase 2 — System Integration
+• deploy model as API service  
+• integrate feature pipeline  
+
+Phase 3 — Production Deployment
+• deploy monitoring and alerting  
+• validate model performance on live data
+
+## Key Risks
+
+| Risk | Mitigation |
+|-----|------------|
+Data drift affecting model accuracy | implement monitoring pipeline |
+Feature pipeline failure | add validation checks |
+False positives triggering alerts | tune model thresholds |
+
 ## Example ML Workflow
 
 A simple anomaly detection example is provided in:
