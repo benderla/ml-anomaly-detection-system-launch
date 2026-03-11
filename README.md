@@ -50,6 +50,10 @@ Prediction API serves anomaly scores.
 Monitoring
 Model drift detection and alert tuning.
 
+## ML Pipeline
+
+![ML Pipeline](diagrams/ml_pipeline.png)
+
 ## System Architecture
 See: architecture/system_architecture.md
 
