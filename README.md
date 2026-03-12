@@ -52,6 +52,19 @@ through a monitoring dashboard.
 
 ![System Architecture](diagrams/ml-system-architecture.png)
 
+This system is designed as an end-to-end anomaly detection workflow for network security monitoring.
+
+Architecture flow:
+
+Network Logs  
+→ Data Ingestion Pipeline  
+→ Feature Engineering  
+→ Isolation Forest Model  
+→ Inference Service  
+→ Security Dashboard / Alerting Layer
+
+The architecture supports the core stages needed to move an anomaly detection model from development into a production-style environment. It includes data ingestion, feature transformation, model inference, alert generation, and monitoring for drift and performance degradation.
+
 ## ML System Lifecycle
 
 1. Data ingestion from network log sources
