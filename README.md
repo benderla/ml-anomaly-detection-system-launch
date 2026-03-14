@@ -41,6 +41,19 @@ Machine learning systems require cross-team coordination between data engineerin
 
 This repository demonstrates how a Technical Program Manager can structure the delivery of an ML anomaly detection system from architecture design through production launch.
 
+## Related Repositories
+
+This project is part of a set of repositories demonstrating the machine learning lifecycle for cybersecurity anomaly detection.
+
+• network-attack-detection  
+  Model development and anomaly detection using Isolation Forest.
+
+• ml-anomaly-detection-system-launch  
+  Deployment architecture and program planning for an ML system.
+
+• ml-model-monitoring  
+  Monitoring model performance and detecting drift in production systems.
+
 ## System Architecture
 See: architecture/system_architecture.md
 
