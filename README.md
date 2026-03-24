@@ -3,7 +3,7 @@
 ## Overview
 This project demonstrates how a Technical Program Manager can lead the deployment of a machine learning anomaly detection system into production.
 
-The system identifies abnormal network activity using an Isolation Forest model and integrates with a security monitoring platform.
+This repo focuses on the operational deployment and system launch architecture for anomaly detection services.
 
 ## Technology Stack
 
