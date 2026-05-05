@@ -111,6 +111,20 @@ These changes would reduce rework and improve system reliability.
 
 ---
 
+## What Would Break
+- Data pipeline delays → model staleness
+- Threshold drift → alert fatigue
+- API latency → downstream system impact
+
+---
+
+## Tradeoffs
+- Precision vs recall (security vs noise)
+- Batch vs real-time inference
+- Simplicity vs scalability
+
+---
+
 ## Architecture
 
 ![System Architecture](diagrams/ml-system-architecture.png)
