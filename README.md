@@ -179,6 +179,37 @@ Phase 3 — Production Deployment
 
 ---
 
+## Tradeoffs
+
+* Precision vs Recall
+
+  * Higher recall catches more attacks but increases false positives
+* Batch vs Real-Time
+
+  * Batch is simpler; real-time increases complexity and cost
+* Simplicity vs Scalability
+
+  * Lightweight system vs production-grade infrastructure
+
+---
+
+## Failure Scenarios
+
+* Data pipeline delay → stale predictions
+* Threshold misconfiguration → alert fatigue
+* Model drift → degraded detection accuracy
+
+---
+
+## Mitigation Strategy
+
+* Monitor input and prediction distributions
+* Tune thresholds using evaluation metrics
+* Implement drift detection with statistical validation
+* Establish retraining cadence
+
+---
+
 ## Repository Structure
 
 - `architecture/` — system design documentation  
